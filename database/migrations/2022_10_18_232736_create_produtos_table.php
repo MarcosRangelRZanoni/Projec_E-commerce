@@ -15,19 +15,12 @@ return new class extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->string("nome");
+            $table->string("nome", 100);
             $table->double("preco");
             $table->integer("quantidade");
             $table->timestamps();
-
-            $table->unsignedInteger("categorias_id");
-            $table->foreign("categorias_id")
-                ->references("id")
-                ->on("categorias");
-            $table->unsignedInteger("fornecedores_id");
-            $table->foreign("fornecedores_id")
-                ->references("id")
-                ->on("fornecedores");
+            $table->foreignId('id_Categoria')->constrained('categorias');
+            $table->foreignId('id_Fornecedor')->constrained('fornecedores');
         });
     }
 
@@ -41,3 +34,13 @@ return new class extends Migration
         Schema::dropIfExists('produtos');
     }
 };
+
+
+//$table->unsignedInteger("id_Categoria")
+//->foreign("id_Categoria")
+//->references("id")
+//->on("categorias");
+//$table->unsignedInteger("id_Fornecedor")
+//->foreign("id_Fornecedor")
+//->references("id")
+//->on("fornecedores");
