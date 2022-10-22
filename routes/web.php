@@ -4,7 +4,7 @@ use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\CarrinhoComprasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('site.home');
 
-Route::get('/produtos', [ProdutosController::class, 'index'])->name('site.produtos');
+Route::get("/detalhe", [HomeController::class, 'detalhe'])->name('site.home');
 
 Route::get('/carrinho_compras', [CarrinhoComprasController::class, 'index'])->name('site.carrinho');
 
 Route::get('/login', [LoginController::class, 'index'])->name('site.login');
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('site.cadastroUser');
+
+Route::resource('categorias', CategoriaController::class);
+
+Route::resource('fornecedores', FornecedorController::class);
+
+Route::resource('produtos', ProdutoController::class);
