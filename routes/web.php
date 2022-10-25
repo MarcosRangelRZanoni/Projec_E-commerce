@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\CarrinhoComprasController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdutoController;
@@ -27,8 +29,8 @@ Route::get('/carrinho_compras', [CarrinhoComprasController::class, 'index'])->na
 Route::get('/login', [LoginController::class, 'index'])->name('site.login');
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('site.cadastroUser');
 
-Route::resource('categorias', CategoriaController::class);
+Route::resource('/categoria', CategoriaController::class);
 
-Route::resource('fornecedores', FornecedorController::class);
+Route::resource('/fornecedor', FornecedorController::class);
 
-Route::resource('produtos', ProdutoController::class);
+Route::resource('/produtos', ProdutoController::class);

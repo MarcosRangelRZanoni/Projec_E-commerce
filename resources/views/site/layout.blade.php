@@ -43,12 +43,17 @@
                         </a>
                     </li>
                     <li class="{{ (Route::current()->getName() === 'site.produtos' ? ' active' : '') }}">
-                        <a class="nav-link px-2 text-white" href="{{ route('site.produtos') }}">
+                        <a class="nav-link px-2 text-white" href="#">
                             Produtos
                         </a>
                     </li>
+                    <li class="{{ (Route::current()->getName() === 'categoria.index' ? ' active' : '') }}">
+                        <a class="nav-link px-2 text-white" href="{{ route('categoria.index') }}">
+                           Categoria
+                        </a>
+                    </li>
                     <li class="{{ (Route::current()->getName() === 'site.home' ? ' active' : '') }}">
-                        <a class="nav-link px-2 text-white" href="{{ route('site.home') }}">
+                        <a class="nav-link px-2 text-white" href="#">
                             Sobre
                         </a>
                     </li>

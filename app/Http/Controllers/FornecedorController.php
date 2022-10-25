@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fornecedores;
 use Illuminate\Http\Request;
 
 class FornecedorController extends Controller
@@ -13,7 +14,10 @@ class FornecedorController extends Controller
      */
     public function index()
     {
-        //
+        $fornecedores = Fornecedores::latest()->paginate(5);
+
+        return view('fornecedor.index', compact('fornecedores'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -23,7 +27,7 @@ class FornecedorController extends Controller
      */
     public function create()
     {
-        //
+        return view('fornecedor.create');
     }
 
     /**
@@ -34,7 +38,29 @@ class FornecedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'telefone' => 'required',
+            'cep' => 'required',
+            'logradouro' => 'required',
+            'cidade' => 'required',
+            'estado' => 'required',
+            'razao_social' => 'required',
+        ]);
+
+
+        $fornecedor = new Fornecedores;
+        $fornecedor->nome = $request->nome;
+        $fornecedor->telefone = $request->telefone;
+        $fornecedor->cep = $request->cep;
+        $fornecedor->logradouro = $request->logradouro;
+        $fornecedor->cidade = $request->cidade;
+        $fornecedor->estado = $request->estado;
+        $fornecedor->razao_social = $request->razao_social;
+
+        $fornecedor->save();
+
+        return redirect()->route('fornecedor.index')->with('success', 'fornecedor cadastrado com sucesso!');
     }
 
     /**
@@ -45,7 +71,9 @@ class FornecedorController extends Controller
      */
     public function show($id)
     {
-        //
+        $fornecedor = Fornecedores::findOrFail($id);
+
+        return view('fornecedor.show', compact('fornecedor'));
     }
 
     /**
@@ -56,7 +84,9 @@ class FornecedorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $fornecedor = Fornecedores::findOrFail($id);
+
+        return view('fornecedor.edit', compact('fornecedor'));
     }
 
     /**
@@ -68,7 +98,21 @@ class FornecedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nome' => 'required',
+            'telefone' => 'required',
+            'cep' => 'required',
+            'logradouro' => 'required',
+            'cidade' => 'required',
+            'estado' => 'required',
+            'razao_social' => 'required',
+        ]);
+
+        $data = $request->all();
+
+        Fornecedores::findOrFail($id)->update($data);
+
+        return redirect()->route('fornecedor.index')->with('success', 'fornecedor atualizado com sucesso!');
     }
 
     /**
@@ -79,6 +123,8 @@ class FornecedorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Fornecedores::findOrFail($id)->delete();
+
+        return redirect()->route('fornecedor.index')->with('success', 'fornecedor excluido com sucesso!');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorias;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -13,7 +14,10 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        $categorias = Categorias::latest()->paginate(5);
+
+        return view('categoria.index', compact('categorias'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -23,7 +27,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('categoria.create');
     }
 
     /**
@@ -34,7 +38,16 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'descricao' => 'required',
+        ]);
+
+        $categoria = new Categorias;
+        $categoria->descricao = $request->descricao;
+
+        $categoria->save();
+
+        return redirect()->route('categoria.index')->with('success', 'categoria criada com sucesso!');
     }
 
     /**
@@ -45,7 +58,9 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        $categoria = Categorias::findOrFail($id);
+
+        return view('categoria.show', compact('categoria'));
     }
 
     /**
@@ -56,7 +71,9 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = Categorias::findOrFail($id);
+
+        return view('categoria.edit', compact('categoria'));
     }
 
     /**
@@ -68,7 +85,15 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'descricao' => 'required',
+        ]);
+
+        $data = $request->all();
+
+        Categorias::findOrFail($id)->update($data);
+
+        return redirect()->route('categoria.index')->with('success', 'Categoria atualizada com sucesso!');
     }
 
     /**
@@ -79,6 +104,8 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Categorias::findOrFail($id)->delete();
+
+        return redirect()->route('categoria.index')->with('success', 'Categoria excluida com sucesso!');
     }
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nome', 100);
             $table->string('telefone', 20);
             $table->string('logradouro');
-            $table->string('cep', 5);
+            $table->string('cep', 10);
             $table->string('cidade', 50);
             $table->string('estado', 2);
             $table->string('razao_social');
