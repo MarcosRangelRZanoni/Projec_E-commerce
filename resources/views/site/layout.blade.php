@@ -42,8 +42,8 @@
                             Inicio
                         </a>
                     </li>
-                    <li class="{{ (Route::current()->getName() === 'site.produtos' ? ' active' : '') }}">
-                        <a class="nav-link px-2 text-white" href="#">
+                    <li class="{{ (Route::current()->getName() === 'produto.index' ? ' active' : '') }}">
+                        <a class="nav-link px-2 text-white" href="{{ route('produto.index') }}">
                             Produtos
                         </a>
                     </li>
@@ -108,7 +108,7 @@
                                 </div>
 
                                 <div class="col-5" style="width: 220px;">
-                                    <input style="display: none; width: 100%; font-size: 1.4rem; background-color: transparent;
+                                    <input style="width: 100%; font-size: 1.4rem; background-color: transparent;
                                  box-shadow: none; border: 0 none; outline: 0;" type="text" />
                                 </div>
                                 <div class="col">

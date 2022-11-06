@@ -14,7 +14,7 @@ class ProdutoController extends Controller
     public function index()
     {
         //Responsavel por exibir a página de produtos do site 
-        return view('site.produtos');
+        return view('produto.index');
     }
 
     /**

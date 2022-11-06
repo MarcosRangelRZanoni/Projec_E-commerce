@@ -22,8 +22,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('site.home');
 
-Route::get("/detalhe", [HomeController::class, 'detalhe'])->name('site.home');
-
 Route::get('/carrinho_compras', [CarrinhoComprasController::class, 'index'])->name('site.carrinho');
 
 Route::get('/login', [LoginController::class, 'index'])->name('site.login');
@@ -33,4 +31,4 @@ Route::resource('/categoria', CategoriaController::class);
 
 Route::resource('/fornecedor', FornecedorController::class);
 
-Route::resource('/produtos', ProdutoController::class);
+Route::resource('/produto', ProdutoController::class);
