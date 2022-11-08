@@ -9,11 +9,12 @@
 
     <!--LINKS UTEIS-->
     <!--Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>ProjE-comerce</title>
 </head>
 
-<body>
+<body class="background-full">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bootstrap" viewBox="0 0 118 94">
             <title>Bootstrap</title>
@@ -29,170 +30,175 @@
             <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
         </symbol>
     </svg>
-    <header class="p-3 bg-dark fixed-top text-white">
+    <div class="fixed-top">
+        </div>
+        
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <header class="p-3 position-relative fixed-top">
+            <div class="text-end carrinho">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
+                        <li class="{{ (Route::current()->getName() === 'site.home' ? ' active' : '') }}">
+                            <a class="nav-link px-2 text-white" src="{{asset('image/carrinho-de-compras.png')}}" href="{{ route('site.carrinho') }}">
+                                <img src="{{asset('image/carrinho-de-compras.png')}}" width="40rem">
+                            </a>
+                        </li>
+    
+                        <li>
+                            <div class="dropdown">
+                                <a class="btn background-full dropdown-toggle" role="button" id="LoginMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i style="font-size: 1.5rem" class="bi bi-person-circle"></i>
+                                </a>
+    
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="LoginMenu">
+                                    <li><a class="dropdown-item" href="{{ route('site.login') }}">Entrar</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('site.cadastroUser') }}">Cadastrar-se</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    Projeto E-comerce
+                    <img src="{{asset('image/Logo.png')}}" width="200px" height="100px">
                 </a>
+            </div>
+            <div class="text-color d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-absolute top-100 start-50 translate-middle">
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
                     <li class="{{ (Route::current()->getName() === 'site.home' ? ' active' : '') }}">
-                        <a class="nav-link px-2 text-white" href="{{ route('site.home') }}">
+                        <a class="text-color nav-link px-2 " href="{{ route('site.home') }}">
                             Inicio
                         </a>
                     </li>
                     <li class="{{ (Route::current()->getName() === 'produto.index' ? ' active' : '') }}">
-                        <a class="nav-link px-2 text-white" href="{{ route('produto.index') }}">
+                        <a class="text-color nav-link px-2 " href="{{ route('produto.index') }}">
                             Produtos
                         </a>
                     </li>
                     <li class="{{ (Route::current()->getName() === 'categoria.index' ? ' active' : '') }}">
-                        <a class="nav-link px-2 text-white" href="{{ route('categoria.index') }}">
-                           Categoria
+                        <a class="text-color nav-link px-2 " href="{{ route('categoria.index') }}">
+                            Categoria
                         </a>
                     </li>
                     <li class="{{ (Route::current()->getName() === 'site.home' ? ' active' : '') }}">
-                        <a class="nav-link px-2 text-white" href="#">
+                        <a class="text-color nav-link px-2 " href="#">
                             Sobre
                         </a>
                     </li>
                 </ul>
 
-                <div class="text-end">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
-                            <li class="{{ (Route::current()->getName() === 'site.home' ? ' active' : '') }}">
-                                <a class="nav-link px-2 text-white" href="{{ route('site.carrinho') }}">
-                                    <i style="font-size: 1.4rem" class="bi bi-cart3"></i>
-                                </a>
-                            </li>
 
-                            <li>
-                                <div class="dropdown">
-                                    <a class="btn btn-dark dropdown-toggle" role="button" id="LoginMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i style="font-size: 1.5rem" class="bi bi-person-circle"></i>
-                                    </a>
+            </div>
+        </header>
+        <div style="background-color: transparent; position: fixed; top: 90%; right: 1%;">
+            <div class="btn-group dropup">
+                <a type="button" class="btn dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i style="font-size: 1.8rem; color: #5882FA;" class="bi bi-chat-right-dots-fill"></i>
+                </a>
+                <ul class="dropdown-menu" style="width: 340px; height: 440px; padding: 0; border-radius: 30px 30px 0 0; background-color: white">
+                    <div style="width: 100%; background-color: black; padding: 40px; border-radius: 20px 20px 0 0;">
 
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="LoginMenu">
-                                        <li><a class="dropdown-item" href="{{ route('site.login') }}">Entrar</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="{{ route('site.cadastroUser') }}">Cadastrar-se</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div style="background-color: transparent; position: fixed; top: 90%; right: 1%;">
-        <div class="btn-group dropup">
-            <a type="button" class="btn dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                <i style="font-size: 1.8rem; color: #5882FA;" class="bi bi-chat-right-dots-fill"></i>
-            </a>
-            <ul class="dropdown-menu" style="width: 340px; height: 440px; padding: 0; border-radius: 30px 30px 0 0; background-color: white">
-                <div style="width: 100%; background-color: black; padding: 40px; border-radius: 20px 20px 0 0;">
+                    <div style="position: absolute; top: 99%; width: 100%;">
+                        <form>
+                            <div style="background-color: #5882FA; height: 60px; border-radius: 0 0 30px 30px;">
+                                <div class="row">
 
-                </div>
-                <div style="position: absolute; top: 99%; width: 100%;">
-                    <form>
-                        <div style="background-color: #5882FA; height: 60px; border-radius: 0 0 30px 30px;">
-                            <div class="row">
+                                    <div class="col-2">
+                                        <input class="form-control" type="file" id="formFile">
+                                    </div>
 
-                                <div class="col-2">
-                                    <input class="form-control" type="file" id="formFile">
-                                </div>
-
-                                <div class="col-5" style="width: 220px;">
-                                    <input style="width: 100%; font-size: 1.4rem; background-color: transparent;
+                                    <div class="col-5" style="width: 220px;">
+                                        <input style="width: 100%; font-size: 1.4rem; background-color: transparent;
                                  box-shadow: none; border: 0 none; outline: 0;" type="text" />
-                                </div>
-                                <div class="col">
-                                    <a type="submit" class="btn">
-                                        <i style="font-size: 1.8rem; color: white;" class="bi bi-send"></i>
-                                    </a>
+                                    </div>
+                                    <div class="col">
+                                        <a type="submit" class="btn">
+                                            <i style="font-size: 1.8rem; color: white;" class="bi bi-send"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </ul>
-        </div>
-    </div>
-
-    <main style="background-color: #D8D8D8; padding-top: 0; padding-bottom: 900px; width: 100%">
-
-        @yield('content')
-
-    </main>
-
-    <footer class="py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-2">
-                    <h5>Secção</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Inicio</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Produtos</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sobre</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-2">
-                    <h5>Desenvolvedores</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2">
-                            <a href="https://github.com/BellaLima" class="nav-link p-0 text-muted" target="_blank">
-                                Isabella
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="https://github.com/MarcosRangelRZanoni" class="nav-link p-0 text-muted" target="_blank">
-                                Marcos Rangel
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a href="https://github.com/natanael986" class="nav-link p-0 text-muted" target="_blank">
-                                Natanael
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-4 offset-4">
-                    <form>
-                        <h5>Inscreva-se</h5>
-                        <p>Para receber nossas promoções e descontos.</p>
-                        <div class="w-100 gap-2">
-                            <label for="email" class="visually-hidden">Email</label>
-                            <input id="email" type="text" class="form-control mb-3" placeholder="Email">
-                            <div style="margin: 10px 50px 10px 50px;">
-                                <a class="btn btn-primary" style="width: 100%;" type="button">Inscreva-se</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-between py-4 my-4 border-top">
-                <p>&copy;
-                    <!--<?= date('Y'); ?>--> {{ date ('Y') }} Sem nome, Empresa. Todos os direitos reservados.
-                </p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-light" href="#"><i style="font-size: 2rem" class="bi bi-twitter"></i></a></li>
-                    <li class="ms-3"><a class="link-light" href="#"><i style="font-size: 2rem" class="bi bi-instagram"></i></a></li>
-                    <li class="ms-3"><a class="link-light" href="#"><i style="font-size: 2rem" class="bi bi-facebook"></i></a></li>
+                        </form>
+                    </div>
                 </ul>
             </div>
         </div>
-    </footer>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <main class="background-full" style="padding-top: 0; padding-bottom: 900px; width: 100%">
+
+            @yield('content')
+
+        </main>
+
+        <footer class="py-5 background-full text-white">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-2">
+                        <h5>Secção</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Inicio</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Produtos</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sobre</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2">
+                        <h5>Desenvolvedores</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <a href="https://github.com/BellaLima" class="nav-link p-0 text-muted" target="_blank">
+                                    Isabella
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="https://github.com/MarcosRangelRZanoni" class="nav-link p-0 text-muted" target="_blank">
+                                    Marcos Rangel
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="https://github.com/natanael986" class="nav-link p-0 text-muted" target="_blank">
+                                    Natanael
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 offset-4">
+                        <form>
+                            <h5>Inscreva-se</h5>
+                            <p>Para receber nossas promoções e descontos.</p>
+                            <div class="w-100 gap-2">
+                                <label for="email" class="visually-hidden">Email</label>
+                                <input id="email" type="text" class="form-control mb-3" placeholder="Email">
+                                <div style="margin: 10px 50px 10px 50px;">
+                                    <a class="btn btn-primary" style="width: 100%;" type="button">Inscreva-se</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between py-4 my-4 border-top">
+                    <p>&copy;
+                        <!--<?= date('Y'); ?>--> {{ date ('Y') }} Sem nome, Empresa. Todos os direitos reservados.
+                    </p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-light" href="#"><i style="font-size: 2rem" class="bi bi-twitter"></i></a></li>
+                        <li class="ms-3"><a class="link-light" href="#"><i style="font-size: 2rem" class="bi bi-instagram"></i></a></li>
+                        <li class="ms-3"><a class="link-light" href="#"><i style="font-size: 2rem" class="bi bi-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
