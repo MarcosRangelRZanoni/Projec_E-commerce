@@ -6,7 +6,8 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ProdutoManagerController;
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,5 @@ Route::resource('/categoria', CategoriaController::class);
 
 Route::resource('/fornecedor', FornecedorController::class);
 
-Route::resource('/produto', ProdutoController::class);
+Route::get('/estoque/produto', [ProdutosController::class, 'index'])->name('site.produtos');
+Route::resource('/produto', ProdutoManagerController::class);

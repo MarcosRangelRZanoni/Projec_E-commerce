@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("nome", 100);
             $table->double("preco");
             $table->integer("quantidade");
+            $table->text("descricao");
+            $table->string("imagem");
             $table->timestamps();
             $table->foreignId('id_Categoria')->constrained('categorias');
             $table->foreignId('id_Fornecedor')->constrained('fornecedores');

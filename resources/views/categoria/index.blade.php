@@ -11,7 +11,7 @@
     </div>
     @endif
 
-    <table class="text-muted table table-bordered">
+    <table class="table table-bordered">
         <tr>
             <th>#</th>
             <th>Descrição</th>
@@ -40,7 +40,5 @@
 
     {!! $categorias->links() !!}
 </div>
-
-<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 
 @endsection

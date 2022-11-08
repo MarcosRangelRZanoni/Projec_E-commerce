@@ -82,13 +82,8 @@
                         </a>
                     </li>
                     <li class="{{ (Route::current()->getName() === 'produto.index' ? ' active' : '') }}">
-                        <a class="text-color nav-link px-2 " href="{{ route('produto.index') }}">
+                        <a class="text-color nav-link px-2 " href="{{ route('site.produtos') }}">
                             Produtos
-                        </a>
-                    </li>
-                    <li class="{{ (Route::current()->getName() === 'categoria.index' ? ' active' : '') }}">
-                        <a class="text-color nav-link px-2 " href="{{ route('categoria.index') }}">
-                            Categoria
                         </a>
                     </li>
                     <li class="{{ (Route::current()->getName() === 'site.home' ? ' active' : '') }}">
@@ -96,6 +91,29 @@
                             Sobre
                         </a>
                     </li>
+                    <div class="dropdown">
+                        <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Area Administrativa
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('produto.index') }}">
+                                    Gerenciar Produtos
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('categoria.index') }}">
+                                    Gerenciar Categorias
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('fornecedor.index') }}">
+                                    Gerenciar Fornecedores
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </ul>
 
 
@@ -171,7 +189,7 @@
             </div>
         </footer>
     </div>
-        
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
