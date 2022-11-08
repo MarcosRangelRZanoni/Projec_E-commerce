@@ -10,10 +10,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title> </title>
-                <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"> </text>
-            </svg>
+        <img src="{{asset('images/images.jpg')}}">
 
             <div class="container">
                 <div class="carousel-caption text-left">
@@ -41,10 +38,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title> </title>
-                <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"> </text>
-            </svg>
+            <img src="{{asset('images/images.jpg')}}">
 
             <div class="container">
                 <div class="carousel-caption">
@@ -55,10 +49,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title> </title>
-                <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"> </text>
-            </svg>
+        <img src="{{asset('images/images.jpg')}}">
 
             <div class="container">
                 <div class="carousel-caption text-right">
@@ -84,6 +75,9 @@
         <div class="col">
             <div class="row m-auto">
                 <div class="col ms-5">
+                    <div class="balloon">
+
+                    </div>
                     <div class="card shadow-cards" style="width: 18rem;">
                         <img src="{{asset('images/camiseta.png')}}" class="card-img-top" alt="...">
                         <div class="card-body cards-all">
@@ -95,7 +89,10 @@
                     </div>
                 </div>
                 <div class="col ms-5">
-                    <div class="shadow-cards card " style="width: 18rem;">
+                    <div class="balloon">
+
+                    </div>
+                    <div class="shadow-cards card " style="width: 18rem; left:35px">
                         <img src="{{asset('images/camiseta.png')}}" class="card-img-top" alt="...">
                         <div class="card-body cards-all">
                             <h5 class="card-title">Card title</h5>
@@ -105,6 +102,9 @@
                     </div>
                 </div>
                 <div class="col ms-5">
+                    <div class="balloon">
+
+                    </div>
                     <div class="card shadow-cards" style="width: 18rem;">
                         <img src="{{asset('images/camiseta-removebg-preview.png')}}" class="card-img-top" alt="...">
                         <div class="card-body cards-all">

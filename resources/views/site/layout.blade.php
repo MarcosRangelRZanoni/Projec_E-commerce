@@ -38,7 +38,8 @@
     <div class="container">
 
         <div class="btn2">
-            <!-- <img src="{{ asset('images/dark-mode.png') }}"> -->
+            <img class="light-mode fixed" src="{{ asset('images/light.png') }}">
+            <img class="mode-dark fixed" src="{{ asset('images/dark-mode.png') }}">
         </div>
         <header class="p-3 position-relative fixed-top">
             <div class="text-end carrinho">
