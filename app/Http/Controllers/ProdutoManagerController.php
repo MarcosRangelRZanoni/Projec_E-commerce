@@ -49,7 +49,7 @@ class ProdutoManagerController extends Controller
             'quantidade' => 'required',
             'imagem' => 'required',
             'id_Fornecedor' => 'required',
-            'id_Categoria ' => 'required'
+            'id_Categoria ' => ''
         ]);
 
 
@@ -58,9 +58,9 @@ class ProdutoManagerController extends Controller
         $produto->descricao = $request->descricao;
         $produto->preco = $request->preco;
         $produto->quantidade = $request->quantidade;
+        $produto->imagem = "";
         $produto->id_Fornecedor = $request->id_Fornecedor;
         $produto->id_Categoria = $request->id_Categoria;
-        $produto->imagem = "";
 
         $dirImagem = "images/produtos";
 
@@ -124,14 +124,14 @@ class ProdutoManagerController extends Controller
             'quantidade' => 'required',
             'imagem' => 'required',
             'id_Fornecedor' => 'required',
-            'id_Categoria ' => 'required'
+            'id_Categoria ' => ''
         ]);
 
         $data = $request->all();
 
         Produtos::findOrFail($id)->update($data);
 
-        return redirect()->route('produtos.index')->with('success', 'Produto atualizado com sucesso!');
+        return redirect()->route('produto.index')->with('success', 'Produto atualizado com sucesso!');
     }
 
     /**
@@ -144,6 +144,6 @@ class ProdutoManagerController extends Controller
     {
         Produtos::findOrFail($id)->delete();
 
-        return redirect()->route('produtos.index')->with('success', 'Produto excluido com sucesso!');
+        return redirect()->route('produto.index')->with('success', 'Produto excluido com sucesso!');
     }
 }
