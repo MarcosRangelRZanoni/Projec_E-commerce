@@ -12,9 +12,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>ProjE-comerce</title>
+
 </head>
 
 <body class="background-full">
+
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bootstrap" viewBox="0 0 118 94">
             <title>Bootstrap</title>
@@ -30,26 +32,30 @@
             <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
         </symbol>
     </svg>
-    <div class="fixed-top">
+
+
+
+    <div class="container">
+
+        <div class="btn2">
+            <!-- <img src="{{ asset('images/dark-mode.png') }}"> -->
         </div>
-        
-        <div class="container">
-            <header class="p-3 position-relative fixed-top">
+        <header class="p-3 position-relative fixed-top">
             <div class="text-end carrinho">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
                         <li class="{{ (Route::current()->getName() === 'site.home' ? ' active' : '') }}">
-                            <a class="nav-link px-2 text-white" src="{{asset('image/carrinho-de-compras.png')}}" href="{{ route('site.carrinho') }}">
-                                <img src="{{asset('image/carrinho-de-compras.png')}}" width="40rem">
+                            <a class="nav-link px-2 text-white" src="{{asset('images/carrinho-de-compras.png')}}" href="{{ route('site.carrinho') }}">
+                                <img src="{{asset('images/carrinho-de-compras.png')}}" width="40rem">
                             </a>
                         </li>
-    
+
                         <li>
                             <div class="dropdown">
-                                <a class="btn background-full dropdown-toggle" role="button" id="LoginMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i style="font-size: 1.5rem" class="bi bi-person-circle"></i>
+                                <a class="btn dropdown-toggle" role="button" id="LoginMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i style="font-size: 1.5rem;" class="bi bi-person-circle"></i>
                                 </a>
-    
+
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="LoginMenu">
                                     <li><a class="dropdown-item" href="{{ route('site.login') }}">Entrar</a></li>
                                     <li>
@@ -64,7 +70,7 @@
             </div>
             <div class="nav">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="{{asset('image/Logo.png')}}" width="200px" height="100px">
+                    <img src="{{asset('images/Logo.png')}}" width="200px" height="100px">
                 </a>
             </div>
             <div class="text-color d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-absolute top-100 start-50 translate-middle">
@@ -95,20 +101,20 @@
 
             </div>
         </header>
-      
 
-        <main class="background-full" style="padding-top: 0; padding-bottom: 900px; width: 100%">
+
+        <main class="" style="padding-top: 0; padding-bottom: 900px; width: 100%">
 
             @yield('content')
 
         </main>
 
-        <footer class="py-5 background-full text-white">
+        <footer class="py-5 text-muted">
             <div class="container">
                 <div class="row">
 
                     <div class="col-2">
-                        <h5>Secção</h5>
+                        <h5 class="">Secção</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Inicio</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Produtos</a></li>
@@ -164,8 +170,12 @@
                 </div>
             </div>
         </footer>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </div>
+        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 
 </html>

@@ -1,10 +1,40 @@
-.background-full {
-    background-color: #180D2B;
-    color: #f6f6f6;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
 
 }
 
+.text-color div {
+    color: #180D2B;
+
+}
+
+.text-color table {
+    color: #180D2B;
+    font-weight: bold;
+}
+
+.text-color.active table {
+    color: #f6f6f6;
+    font-weight: bold;
+}
+
 .text-color a {
+    color: #180D2B;
+    font-weight: bold;
+}
+
+.text-color.active a {
+    color: #f6f6f6;
+    font-weight: bold;
+}
+
+.text-color.active footer div {
     color: #f6f6f6;
     font-weight: bold;
 }
@@ -21,12 +51,14 @@
     -moz-user-select: none;
     user-select: none;
 }
-.balloon{
+
+.balloon {
     margin-bottom: 4rem;
     margin-top: 5rem;
     border: 1px solid #8F3BFF;
     box-shadow: 5px 10px 18px #8F3BFF;
 }
+
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -37,11 +69,7 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    color: #5a5a5a;
-}
+
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -52,9 +80,9 @@ body {
     margin-bottom: 4rem;
     margin-top: 5rem;
     border: 1px solid #8F3BFF;
-    
+
     box-shadow: 5px 10px 18px #8F3BFF;
-   
+
 }
 
 /* Since positioning the image, we need to help out the caption */
@@ -144,4 +172,78 @@ body {
     margin-bottom: 0;
     text-align: center;
     padding: 10px;
+}
+
+.background-full {
+    background: #f6f6f6;
+    color: #180D2B;
+    transition: background .5s;
+}
+
+.background-full.active {
+    background: #180D2B;
+    color: #f6f6f6;
+}
+
+.btn2 {
+    position: relative;
+    width: 45px;
+    height: 20px;
+    background: #ccc;
+    border: 2px solid #bbb;
+    border-radius: 20px;
+    top: -15px;
+    left: 100%;
+    cursor: pointer;
+}
+
+.btn2::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 15px;
+    /* background-image: url('../image/dark-mode.png');
+    background-repeat: no-repeat; */
+    background: #180D2B;
+    border-radius: 30px;
+    top: 8px;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: left .5s;
+}
+
+.btn2.active::before {
+    left: 25px;
+}
+
+.dark-mode {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 15px;
+    border-radius: 30px;
+    top: 8px;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: left .5s;
+}
+
+.cards-all {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    color: #f6f6f6;
+    background: #4859FF;
+    border-radius: 5px 5px 0px 0px;
+    
+}
+
+.shadow-cards {
+    border: 2px solid #8F3BFF;
+    box-shadow: 5px 10px 18px #8F3BFF;
+}
+
+.shadow-cards a {
+    background: #f6f6f6;
+    border: 2px solid #f6f6f6;
 }
