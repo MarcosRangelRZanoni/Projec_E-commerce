@@ -95,40 +95,7 @@
 
             </div>
         </header>
-        <div style="background-color: transparent; position: fixed; top: 90%; right: 1%;">
-            <div class="btn-group dropup">
-                <a type="button" class="btn dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i style="font-size: 1.8rem; color: #5882FA;" class="bi bi-chat-right-dots-fill"></i>
-                </a>
-                <ul class="dropdown-menu" style="width: 340px; height: 440px; padding: 0; border-radius: 30px 30px 0 0; background-color: white">
-                    <div style="width: 100%; background-color: black; padding: 40px; border-radius: 20px 20px 0 0;">
-
-                    </div>
-                    <div style="position: absolute; top: 99%; width: 100%;">
-                        <form>
-                            <div style="background-color: #5882FA; height: 60px; border-radius: 0 0 30px 30px;">
-                                <div class="row">
-
-                                    <div class="col-2">
-                                        <input class="form-control" type="file" id="formFile">
-                                    </div>
-
-                                    <div class="col-5" style="width: 220px;">
-                                        <input style="width: 100%; font-size: 1.4rem; background-color: transparent;
-                                 box-shadow: none; border: 0 none; outline: 0;" type="text" />
-                                    </div>
-                                    <div class="col">
-                                        <a type="submit" class="btn">
-                                            <i style="font-size: 1.8rem; color: white;" class="bi bi-send"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </ul>
-            </div>
-        </div>
+      
 
         <main class="background-full" style="padding-top: 0; padding-bottom: 900px; width: 100%">
 

@@ -21,7 +21,12 @@
     -moz-user-select: none;
     user-select: none;
 }
-
+.balloon{
+    margin-bottom: 4rem;
+    margin-top: 5rem;
+    border: 1px solid #8F3BFF;
+    box-shadow: 5px 10px 18px #8F3BFF;
+}
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -46,8 +51,8 @@ body {
 .carousel {
     margin-bottom: 4rem;
     margin-top: 5rem;
-    border: 1px solid ;
-    padding: 10px;
+    border: 1px solid #8F3BFF;
+    
     box-shadow: 5px 10px 18px #8F3BFF;
    
 }
