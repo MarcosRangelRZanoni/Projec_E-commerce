@@ -12,4 +12,8 @@ https://fre-template.webflow.io/
 
 
 
-Fundo: 21113C
+Fundo: 180D2B
+
+4859FF
+
+8F3BFF
