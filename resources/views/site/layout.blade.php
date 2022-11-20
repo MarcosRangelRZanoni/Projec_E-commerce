@@ -55,20 +55,24 @@
                                     {{ Auth::user()->name }}
                                     @endauth
                                 </a>
+                                @if (Route::has('login'))
                                 <div class="dropdown-menu" style="margin-left: -50px;">
-                                    <a class="dropdown-item" href="{{ route('login') }}">Acessar</a>
                                     @auth
+                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">Perfil</a>
                                     <!-- Authentication -->
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
 
                                         <a class="dropdown-item" href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                            {{ __('Log Out') }}
+                                            {{ __('Sair') }}
                                         </a>
                                     </form>
+                                    @else
+                                    <a class="dropdown-item" href="{{ route('login') }}">Acessar</a>
                                     @endauth
                                 </div>
+                                @endif
                             </div>
                             @endif
 
@@ -105,13 +109,9 @@
                         </a>
 
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('users.index') }}">
-                                Gerenciar Usuário
-                            </a>
                             <a class="dropdown-item" href="{{ route('produto.index') }}">
                                 Gerenciar Produtos
                             </a>
-
                             <a class="dropdown-item" href="{{ route('categoria.index') }}">
                                 Gerenciar Categorias
                             </a>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px">
-    <a class="btn btn-info" href="{{ route('categoria.create') }}">Criar categoria</a>
+    <a class="btn btn-success" href="{{ route('categoria.create') }}">Criar Nova categoria</a>
     <p></p>
     @if ($message = Session::get('success'))
     <p></p>
@@ -26,7 +26,7 @@
 
                     <a class="btn btn-info" href="{{ route('categoria.show', $categoria->id) }}">Exibir</a>
 
-                    <a class="btn btn-info" href="{{ route('categoria.edit', $categoria->id) }}">Editar</a>
+                    <a class="btn btn-primary" href="{{ route('categoria.edit', $categoria->id) }}">Editar</a>
 
                     @csrf
                     @method('DELETE')

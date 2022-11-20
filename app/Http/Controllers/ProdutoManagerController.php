@@ -32,12 +32,8 @@ class ProdutoManagerController extends Controller
     {
         $categorias = Categorias::all();
         $fornecedores = Fornecedores::all();
-        $data = [
-            'fornecedores' => $fornecedores,
-            'categorias' => $categorias
-        ];
 
-        return view('produto.create', compact('data'));
+        return view('produto.create', compact('categorias', 'fornecedores'));
     }
 
     /**
@@ -55,8 +51,6 @@ class ProdutoManagerController extends Controller
             'preco' => 'required',
             'quantidade' => 'required',
             'imagem' => 'required',
-            'id_Fornecedor' => 'required',
-            'id_Categoria ' => 'required'
         ]);
 
 

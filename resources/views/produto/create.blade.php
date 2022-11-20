@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <strong>Categoria: </strong>
                     <select name="id_Categoria" class="form-control" placeholder="Fornecedor">
-                        @foreach ($data['categorias'] as $categoria)
+                        @foreach ($categorias as $categoria)
                         <option value="{{$categoria->id}}">
                             {{$categoria->nome}}
                         </option>
@@ -57,11 +57,11 @@
                     <input type="input" name="descricao" class="form-control" placeholder="Informe a descrição">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
                 <div class="form-group">
                     <strong>Fornecedor:</strong>
                     <select name="id_Fornecedor" class="form-control" placeholder="Fornecedor">
-                        @foreach ($data['fornecedores'] as $fornecedor)
+                        @foreach ($fornecedores as $fornecedor)
                         <option value="{{$fornecedor->id}}">
                             {{$fornecedor->nome}}
                         </option>

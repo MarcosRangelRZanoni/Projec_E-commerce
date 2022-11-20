@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px">
-    <a class="btn btn-info" href="{{ route('produto.create') }}">Adicionar produto</a>
+    <a class="btn btn-success" href="{{ route('produto.create') }}">Adicionar novo produto</a>
     <p></p>
     @if ($message = Session::get('success'))
     <p></p>
@@ -11,7 +11,7 @@
     </div>
     @endif
 
-    <table class="table table-bordered table-hover">
+    <table class="table table-bordered">
         <tr>
             <th>#</th>
             <th>Categoria</th>
