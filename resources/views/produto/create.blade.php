@@ -57,7 +57,7 @@
                     <input type="input" name="descricao" class="form-control" placeholder="Informe a descrição">
                 </div>
             </div>
-            <div class="col-1">
+            <div class="col-6">
                 <div class="form-group">
                     <strong>Fornecedor:</strong>
                     <select name="id_Fornecedor" class="form-control" placeholder="Fornecedor">

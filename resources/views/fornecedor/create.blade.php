@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px">
-    <a class="btn btn-primary" href="{{ route('fornecedor.index') }}"> Voltar</a>
+    <a class="btn btn-info" href="{{ route('fornecedor.index') }}"> Voltar</a>
     <p></p>
 
     @if ($errors->any())
@@ -65,7 +65,7 @@
             </div>
 
             <div class="mt-4 col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-info">Salvar</button>
             </div>
         </div>
 

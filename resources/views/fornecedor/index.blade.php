@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px">
-    <a class="btn btn-success" href="{{ route('fornecedor.create') }}">Criar Nova fornecedor</a>
+    <a class="btn btn-info" href="{{ route('fornecedor.create') }}">Criar fornecedor</a>
     <p></p>
     @if ($message = Session::get('success'))
     <p></p>
