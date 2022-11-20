@@ -1,6 +1,13 @@
+composer update
+
 php artisan permission:create-permission admin
 php artisan permission:create-permission user
 
+<<<<<<< Updated upstream
 php arisan migrate:fresh
 
 php artisan serve
+=======
+php artisan migrate:fresh
+php artisan serve
+>>>>>>> Stashed changes
