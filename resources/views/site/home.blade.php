@@ -10,52 +10,36 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <img src="{{asset('images/images.jpg')}}">
+            <img src="{{ asset('images/Carrosel_IMG1.jpg') }}" alt="Carrosel">
 
             <div class="container">
                 <div class="carousel-caption text-left">
-                    <h1>Example headline.</h1>
-
-                    @if (date('H') > 0 && date("H") < 12) <p>Bom dia! Agora são {{ date('H:m') }}m.</p>
-                        @elseif (date("H") < 18) <p>Bom tarde! Agora são {{ date('H:m') }}m.</p>
-                            @else
-                            <p>Bom noite! Agora são {{ date('H:m') }}m.</p>
-                            @endif
-
-                            {{-- <?php
-                                    if (date('H') > 0 && date("H") < 12) {
-                                        echo "<p>Bom dia!</p>";
-                                    } elseif (date("H") < 18) {
-                                        echo "<p>Boa tarde!</p>";
-                                    } else {
-                                        echo "<p>Boa Noite!</p>";
-                                    }
-                                    ?> --}}
-
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                    <!-- <h1>Example headline.</h1>
+                    <p>Some representative placeholder content for the first slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> -->
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{asset('images/images.jpg')}}">
+            <img src="{{ asset('images/Carrosel_IMG2.png') }}" alt="Carrosel">
 
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
+                    <!-- <h1>Another example headline.</h1>
                     <p>Some representative placeholder content for the second slide of the carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p> -->
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-        <img src="{{asset('images/images.jpg')}}">
+            <img src="{{ asset('images/Carrosel_IMG3.jpg') }}" alt="Carrosel">
+
 
             <div class="container">
                 <div class="carousel-caption text-right">
-                    <h1>One more for good measure.</h1>
+                    <!-- <h1>One more for good measure.</h1>
                     <p>Some representative placeholder content for the third slide of this carousel.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
                 </div>
             </div>
         </div>
@@ -75,11 +59,8 @@
         <div class="col">
             <div class="row m-auto">
                 <div class="col ms-5">
-                    <div class="balloon">
-
-                    </div>
                     <div class="card shadow-cards" style="width: 18rem;">
-                        <img src="{{asset('images/camiseta.png')}}" class="card-img-top" alt="...">
+                        <img src="{{ asset('images/camiseta.png')}}" class="card-img-top" alt="...">
                         <div class="card-body cards-all">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -89,11 +70,8 @@
                     </div>
                 </div>
                 <div class="col ms-5">
-                    <div class="balloon">
-
-                    </div>
-                    <div class="shadow-cards card " style="width: 18rem; left:35px">
-                        <img src="{{asset('images/camiseta.png')}}" class="card-img-top" alt="...">
+                    <div class="shadow-cards card " style="width: 18rem;">
+                        <img src="{{ asset('images/camiseta.png')}}" class="card-img-top" alt="...">
                         <div class="card-body cards-all">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -102,11 +80,8 @@
                     </div>
                 </div>
                 <div class="col ms-5">
-                    <div class="balloon">
-
-                    </div>
                     <div class="card shadow-cards" style="width: 18rem;">
-                        <img src="{{asset('images/camiseta-removebg-preview.png')}}" class="card-img-top" alt="...">
+                        <img src="{{ asset('images/camiseta-removebg-preview.png')}}" class="card-img-top" alt="...">
                         <div class="card-body cards-all">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -116,6 +91,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 
-        @endsection
+@endsection

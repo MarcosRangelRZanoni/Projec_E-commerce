@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\CarrinhoComprasController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
@@ -8,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdutoManagerController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +25,8 @@ Route::get('/', [HomeController::class, 'index'])->name('site.home');
 
 Route::get('/carrinho_compras', [CarrinhoComprasController::class, 'index'])->name('site.carrinho');
 
-Route::get('/login', [LoginController::class, 'index'])->name('site.login');
-Route::get('/cadastro', [CadastroController::class, 'index'])->name('site.cadastroUser');
+Route::get('/acessar', [LoginController::class, 'index'])->name('site.login');
+Route::post('/login', [LoginController::class, 'store']);
 
 Route::resource('/categoria', CategoriaController::class);
 
@@ -34,3 +34,16 @@ Route::resource('/fornecedor', FornecedorController::class);
 
 Route::get('/estoque/produto', [ProdutosController::class, 'index'])->name('site.produtos');
 Route::resource('/produto', ProdutoManagerController::class);
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

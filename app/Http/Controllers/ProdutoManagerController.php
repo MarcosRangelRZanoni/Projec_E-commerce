@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorias;
+use App\Models\Fornecedores;
 use App\Models\Produtos;
 use Illuminate\Http\Request;
 
@@ -29,8 +30,14 @@ class ProdutoManagerController extends Controller
      */
     public function create()
     {
-        //Responsavel por direcionar para a criação de um novo produto
-        return view('produto.create');
+        $categorias = Categorias::all();
+        $fornecedores = Fornecedores::all();
+        $data = [
+            'fornecedores' => $fornecedores,
+            'categorias' => $categorias
+        ];
+
+        return view('produto.create', compact('data'));
     }
 
     /**
@@ -49,7 +56,7 @@ class ProdutoManagerController extends Controller
             'quantidade' => 'required',
             'imagem' => 'required',
             'id_Fornecedor' => 'required',
-            'id_Categoria ' => ''
+            'id_Categoria ' => 'required'
         ]);
 
 
@@ -58,9 +65,9 @@ class ProdutoManagerController extends Controller
         $produto->descricao = $request->descricao;
         $produto->preco = $request->preco;
         $produto->quantidade = $request->quantidade;
-        $produto->imagem = "";
         $produto->id_Fornecedor = $request->id_Fornecedor;
         $produto->id_Categoria = $request->id_Categoria;
+        $produto->imagem = "";
 
         $dirImagem = "images/produtos";
 
@@ -124,14 +131,14 @@ class ProdutoManagerController extends Controller
             'quantidade' => 'required',
             'imagem' => 'required',
             'id_Fornecedor' => 'required',
-            'id_Categoria ' => ''
+            'id_Categoria ' => 'required'
         ]);
 
         $data = $request->all();
 
         Produtos::findOrFail($id)->update($data);
 
-        return redirect()->route('produto.index')->with('success', 'Produto atualizado com sucesso!');
+        return redirect()->route('produtos.index')->with('success', 'Produto atualizado com sucesso!');
     }
 
     /**
@@ -144,6 +151,6 @@ class ProdutoManagerController extends Controller
     {
         Produtos::findOrFail($id)->delete();
 
-        return redirect()->route('produto.index')->with('success', 'Produto excluido com sucesso!');
+        return redirect()->route('produtos.index')->with('success', 'Produto excluido com sucesso!');
     }
 }

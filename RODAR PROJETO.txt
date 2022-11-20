@@ -1,0 +1,2 @@
+php artisan permission:create-permission admin
+php artisan permission:create-permission user

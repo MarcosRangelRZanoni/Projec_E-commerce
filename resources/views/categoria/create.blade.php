@@ -21,6 +21,12 @@
         @csrf
 
         <div class="row">
+            <div class="form-group">
+                <strong>Descrição:</strong>
+                <input class="form-control" style="height:150px" name="nome" placeholder="Nome" />
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Descrição:</strong>

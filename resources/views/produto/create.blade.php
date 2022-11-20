@@ -24,7 +24,13 @@
             <div class="col-4">
                 <div class="form-group">
                     <strong>Categoria: </strong>
-                    <input type="input" name="id_Categoria" class="form-control" placeholder="Informe a categoria">
+                    <select name="id_Categoria" class="form-control" placeholder="Fornecedor">
+                        @foreach ($data['categorias'] as $categoria)
+                        <option value="{{$categoria->id}}">
+                            {{$categoria->nome}}
+                        </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-4">
@@ -54,7 +60,13 @@
             <div class="col-1">
                 <div class="form-group">
                     <strong>Fornecedor:</strong>
-                    <input type="input" name="id_Fornecedor" class="form-control" placeholder="EX: 1">
+                    <select name="id_Fornecedor" class="form-control" placeholder="Fornecedor">
+                        @foreach ($data['fornecedores'] as $fornecedor)
+                        <option value="{{$fornecedor->id}}">
+                            {{$fornecedor->nome}}
+                        </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 

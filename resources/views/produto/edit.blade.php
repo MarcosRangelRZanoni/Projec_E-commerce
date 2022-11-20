@@ -24,7 +24,16 @@
             <div class="col-4">
                 <div class="form-group">
                     <strong>Categoria: </strong>
-                    <input type="input" name="id_Categoria" value="{{ $produto->id_Categoria }}" class="form-control" placeholder="Nome">
+                    <select name="id_Categoria" class="form-control" placeholder="Categoria">
+                        @foreach ($data['categorias'] as $categoria)
+                        <option value="{{$categoria->id}}" @if ($categoria->id == $produto->categoria_id)
+                            selected
+                            @endif
+                            >
+                            {{$categoria->nome}}
+                        </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-4">
@@ -54,7 +63,16 @@
             <div class="col-1">
                 <div class="form-group">
                     <strong>Fornecedor:</strong>
-                    <input type="input" name="id_Fornecedor" value="{{ $produto->id_Fornecedor }}" class="form-control" placeholder="SP">
+                    <select name="id_Fornecedor" class="form-control" placeholder="Fornecedor">
+                        @foreach ($data['fornecedores'] as $fornecedor)
+                        <option value="{{$fornecedor->id}}" @if ($fornecedor->id == $produto->id_Fornecedor)
+                            selected
+                            @endif
+                            >
+                            {{$fornecedor->nome}}
+                        </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 
