@@ -105,9 +105,13 @@
                         </a>
 
                         <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('users.index') }}">
+                                Gerenciar Usuário
+                            </a>
                             <a class="dropdown-item" href="{{ route('produto.index') }}">
                                 Gerenciar Produtos
                             </a>
+
                             <a class="dropdown-item" href="{{ route('categoria.index') }}">
                                 Gerenciar Categorias
                             </a>

@@ -9,6 +9,8 @@ use App\Http\Controllers\ProdutoManagerController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserManangerController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('site.home');
 
+
 Route::get('/carrinho_compras', [CarrinhoComprasController::class, 'index'])->name('site.carrinho');
 
 Route::get('/acessar', [LoginController::class, 'index'])->name('site.login');
@@ -34,6 +37,13 @@ Route::resource('/fornecedor', FornecedorController::class);
 
 Route::get('/estoque/produto', [ProdutosController::class, 'index'])->name('site.produtos');
 Route::resource('/produto', ProdutoManagerController::class);
+
+Route::get('/users/user', [UserController::class, 'index'])->name('site.users');
+Route::resource('/users', UserManangerController::class);
+
+
+
+
 
 
 Route::get('/dashboard', function () {
