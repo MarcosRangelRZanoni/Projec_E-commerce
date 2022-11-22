@@ -20,6 +20,6 @@ class HomeController extends Controller
     {
         $produto = Produtos::findOrFail($id);
 
-        return view("site.produto", compact('produto'));
+        return view("site.produtos", compact('produto'));
     }
 }

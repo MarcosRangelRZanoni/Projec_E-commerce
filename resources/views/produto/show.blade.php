@@ -30,6 +30,9 @@
                 <strong>Descrição:</strong>
                 {{ $produto->descricao }}
             </div>
+            <div class="form-group">
+                <img src="{{ asset($produto->imagem) }}" alt="{{ $produto->nome }}">
+            </div>
         </div>
     </div>
 </div>
